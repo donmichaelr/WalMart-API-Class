@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Schema for data exchanged between Walmart and its partners.
+  Copyright 2015 Walmart Corporation. All rights reserved.
+-->
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:wm="http://walmart.com/content"
+  targetNamespace="http://walmart.com/content"
+  elementFormDefault="qualified"
+  version="3.0">
+  
+   <xsd:include schemaLocation="ContentProductFeedHeader.xsd" />
+   <xsd:include schemaLocation="ContentProduct.xsd"/>
+
+
+<xsd:element name="ContentProductFeed">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element name="ContentProductFeedHeader" type="wm:ContentProductFeedHeader">
+	          <xsd:annotation>
+	            <xsd:documentation>
+	              Feed header
+	            </xsd:documentation>
+	          </xsd:annotation>
+	        </xsd:element>
+			<xsd:element name="ContentProduct" type="wm:ContentProduct" minOccurs="1" maxOccurs="10000"/>
+		</xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+			
+
+</xsd:schema>
